@@ -1,0 +1,2 @@
+# cypress-deep-spok
+ 
