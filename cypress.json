@@ -1,6 +1,6 @@
 {
     "defaultCommandTimeout": 200,
     "screenshotOnRunFailure": false,
-    "testFiles": "**/*.spec.js",
+    "testFiles": "**/*.spec.ts",
     "video": false
 }

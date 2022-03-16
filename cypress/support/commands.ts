@@ -1,4 +1,4 @@
-import { errorMessageTemplate } from "../support/testConstants";
+import { errorMessageTemplate } from "./testConstants";
 
 Cypress.Commands.add("shouldFail", (errorMessage, useTemplate = true) => {
   cy.on("fail", (e) => {

@@ -6,14 +6,17 @@ import {
 
 const testObject = {
   foo: "some string",
-  bar: { far: 1, boo: "string" },
+  bar: { far: 3, boo: "string" },
   rah: {
+    boo: 12,
     lah: {
       huzzah: true,
       tada: "#11002",
-      literalah: "literal string",
+      boo: 22,
+      abc: "literal string",
     },
     wah: 100,
+    flah: [1, 2, 3],
   },
 };
 
@@ -21,14 +24,17 @@ describe("deep equality", () => {
   it("checks for spok deep equality in an object", () => {
     cy.spok(testObject, {
       foo: "spok.string",
-      bar: { far: "spok.gtz", boo: "spok.string" },
+      bar: { far: "spok.gt(1)", boo: "spok.string" },
       rah: {
+        boo: "spok.number",
         lah: {
           huzzah: "spok.boolean",
           tada: "spok.test(#\\d{5})",
-          literalah: "literal string",
+          boo: "spok.number",
+          abc: "literal string",
         },
         wah: 100,
+        flah: "spok.arrayElements(3)",
       },
     });
   });
@@ -53,10 +59,12 @@ describe("strictMode", () => {
         foo: "spok.string",
         bar: { far: "spok.gtz", boo: "spok.string" },
         rah: {
+          boo: "spok.number",
           lah: {
             huzzah: "spok.boolean",
             tada: "spok.test(#\\d{5})",
-            literalah: "literal string",
+            boo: "spok.number",
+            abc: "literal string",
           },
           wah: 100,
         },

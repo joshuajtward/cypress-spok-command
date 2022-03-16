@@ -1,5 +1,7 @@
 import { ruleMatcher } from "./rules";
-import { spokRegex } from "./regexes";
+import { regexes } from "./regexes";
+
+const { spokRegex } = regexes;
 
 export function matchRecursively(object) {
   let newMatcher = {};

@@ -1,5 +1,5 @@
-const cySpok = require("cy-spok");
-const regexes = require("./regexes");
+import cySpok from "cy-spok";
+import { regexes } from "./regexes";
 
 const {
   spokArrayElementsRegex,
@@ -24,6 +24,8 @@ export function ruleMatcher(value) {
       break;
     // spok.arrayElements
     case value.match(spokArrayElementsRegex)?.input:
+      console.log(value.match(spokArrayElementsRegex));
+      console.log(value.match(spokArrayElementsRegex)[1]);
       value = cySpok.arrayElements(
         parseInt(value.match(spokArrayElementsRegex)[1])
       );
