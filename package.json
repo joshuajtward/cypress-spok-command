@@ -13,8 +13,7 @@
   ],
   "scripts": {
     "open": "cypress open",
-    "test": "yarn tests && yarn testNegatives",
-    "tests": "cypress run"
+    "test": "cypress run"
   },
   "dependencies": {
     "cy-spok": "^1.5.2"
