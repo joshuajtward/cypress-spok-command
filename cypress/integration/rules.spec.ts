@@ -23,7 +23,7 @@ describe("spok.arrayElements()", () => {
     cy.spok({ foo: mixedArray }, { foo: "spok.arrayElements(4)" });
   });
 
-  it("allows string interpolation", () => {
+  it("passes with string interpolation", () => {
     const someNumber = 4;
     cy.spok({ foo: mixedArray }, { foo: `spok.arrayElements(${someNumber})` });
   });
@@ -407,7 +407,7 @@ describe("spok.test()", () => {
     );
   });
 
-  it("failes when the regex doesn't match", () => {
+  it("fails when the regex doesn't match", () => {
     cy.shouldFail("foo = 'abc'  satisfies: spok.test(/^\\d{4}$/)");
     cy.spok({ foo: "abc" }, { foo: "spok.test(^\\d{4}$)" });
   });
