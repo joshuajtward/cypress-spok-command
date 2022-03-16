@@ -18,16 +18,19 @@ yarn add -D cypress-spok-command
 
 Add the following to your support file (`cypress/support/commands.js` by default):
 
-```javascript
+```typescript
 import 'cypress-spok-command';
 ```
+
 Then inside a test you can immediately use the `cy-spok` command:
 
-`cy.spok(target, matcher)`
+```typescript
+cy.spok(target, matcher)
+```
 
 e.g.
 
-```javascript
+```typescript
 it('matches with spok!', () => {
     cy.request('/someEndpoint').then((response) => {
         // this could also be loaded from a fixture
