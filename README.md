@@ -1,6 +1,6 @@
 [![NPM](https://nodei.co/npm/cypress-spok-command.png?compact=true)](https://nodei.co/npm/cypress-spok-command/)
 
-![tests](https://github.com/joshuajtward/cypress-spok-command/actions/workflows/tests.yml/badge.svg)
+![tests](https://github.com/joshuajtward/cypress-spok-command/actions/workflows/main.yml/badge.svg)
 
 # cypress-spok-command
 
