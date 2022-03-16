@@ -1,8 +1,17 @@
 /// <reference path="./index.d.ts"/>
-const cySpok = require("cy-spok");
+import cySpok from "cy-spok";
 import { testStrictMode } from "./strictMode";
 import { matchRecursively } from "./matcher";
-function spok(target, matcher, options = {}) {
+
+type spokOptionsType = {
+  strictMode?: boolean;
+};
+
+function spok(
+  target: object,
+  matcher: object,
+  options: spokOptionsType = { strictMode: false }
+) {
   const { strictMode } = options;
 
   Cypress.log({

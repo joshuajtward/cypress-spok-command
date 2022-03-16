@@ -1,4 +1,4 @@
-module.exports = {
+export const regexes = {
   spokRegex: /^spok\..*$/,
   spokArrayElementsRegex: /^spok\.arrayElements\((.*)\)$/,
   spokGeRegex: /^spok.ge\((.*)\)$/,
