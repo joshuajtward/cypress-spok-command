@@ -1,3 +1,7 @@
+[![NPM](https://nodei.co/npm/cypress-spok-command.png?compact=true)](https://nodei.co/npm/cypress-spok-command/)
+
+![tests](https://github.com/joshuajtward/cypress-spok-command/actions/workflows/main.yml/badge.svg)
+
 # cypress-spok-command
 
 This repo is a wrapper around [cy-spok](https://www.npmjs.com/package/cy-spok), moving it into a custom command with the help of a string-to-function map. The motivation for this is to make it easier to write spok assertions in Cypress, without having to import cy-spok in every file. 
