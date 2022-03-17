@@ -19,7 +19,9 @@ yarn add -D cypress-spok-command
 Add the following to your support file (`cypress/support/commands.js` by default):
 
 ```typescript
-import 'cypress-spok-command';
+import { spok } from 'cypress-spok-command';
+
+Cypress.Commands.add("spok", spok);
 ```
 
 Then inside a test you can immediately use the `cy-spok` command:

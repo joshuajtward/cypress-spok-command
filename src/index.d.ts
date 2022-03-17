@@ -58,6 +58,6 @@ declare namespace Cypress {
      *   { strictMode: true }
      * )
      */
-    spok(target: any, matcher: any, options?: { strictMode?: boolean }): void;
+    spok(target: any, matcher: any, options?: { strictMode?: boolean }): any;
   }
 }

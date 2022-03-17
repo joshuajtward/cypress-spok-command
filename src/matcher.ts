@@ -3,9 +3,9 @@ import { regexes } from "./regexes";
 
 const { spokRegex } = regexes;
 
-export function matchRecursively(object) {
-  let newMatcher = {};
-  for (let [key, value] of Object.entries(object)) {
+export function matchRecursively(object: object) {
+  const newMatcher: { [key: string]: any } = {};
+  for (const [key, value] of Object.entries(object)) {
     let result = value;
     if (typeof value === "string" && value.match(spokRegex)) {
       result = ruleMatcher(value);

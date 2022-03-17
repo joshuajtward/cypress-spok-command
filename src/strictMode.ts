@@ -1,4 +1,4 @@
-function sameKeys(target, matcher) {
+function sameKeys(target: object, matcher: object) {
   const hasSameKeyCount =
     Object.keys(matcher).length === Object.keys(target).length;
   if (!hasSameKeyCount) {
@@ -10,7 +10,7 @@ function sameKeys(target, matcher) {
 }
 export const strictModeErrorMessage =
   "cy.spok() strictMode error: object keys were not an exact match";
-export function testStrictMode(target, matcher) {
+export function testStrictMode(target: object, matcher: object) {
   const result = sameKeys(target, matcher);
   Cypress.log({
     name: "strictMode",

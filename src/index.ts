@@ -1,4 +1,3 @@
-/// <reference path="./index.d.ts"/>
 import cySpok from "cy-spok";
 import { testStrictMode } from "./strictMode";
 import { matchRecursively } from "./matcher";
@@ -7,7 +6,7 @@ type spokOptionsType = {
   strictMode?: boolean;
 };
 
-function spok(
+export function spok(
   target: object,
   matcher: object,
   options: spokOptionsType = { strictMode: false }
@@ -18,7 +17,7 @@ function spok(
     name: "spok",
     message: strictMode ? "strictMode: true" : "",
     consoleProps: () => ({
-      target: target,
+      target,
     }),
   });
 
@@ -26,8 +25,3 @@ function spok(
   const finalMatcher = matchRecursively(matcher);
   cy.wrap(target, { log: false }).should(cySpok(finalMatcher));
 }
-Cypress.Commands.add("spok", spok);
-
-module.exports = {
-  spok,
-};
