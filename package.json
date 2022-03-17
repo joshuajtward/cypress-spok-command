@@ -1,14 +1,14 @@
 {
   "name": "cypress-spok-command",
   "description": "A wrapper around cy-spok",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
-  "main": "src/index.ts",
+  "main": "lib/index.js",
   "files": [
     "lib/**/*"
   ],
   "scripts": {
-    "prepare" : "npm run build",
+    "prepare" : "yarn build",
     "build": "tsc",
     "checkTypes": "tsc --noEmit && cd cypress && tsc",
     "open": "cypress open",
