@@ -151,7 +151,7 @@ describe("spok.ge()", () => {
   });
 
   it("fails when the param is not a number", () => {
-    cy.shouldFail("foo = 1  satisfies: spok.ge('forty')");
+    cy.shouldFail("foo = 1  satisfies: spok.ge(NaN)");
     cy.spok({ foo: 1 }, { foo: "spok.ge('forty')" });
   });
 
@@ -192,7 +192,7 @@ describe("spok.gt()", () => {
   });
 
   it("fails when the param is not a number", () => {
-    cy.shouldFail("foo = 1  satisfies: spok.gt('forty')");
+    cy.shouldFail("foo = 1  satisfies: spok.gt(NaN)");
     cy.spok({ foo: 1 }, { foo: "spok.gt('forty')" });
   });
 
@@ -235,7 +235,7 @@ describe("spok.le()", () => {
   });
 
   it("fails when the param is not a number", () => {
-    cy.shouldFail("foo = 1  satisfies: spok.le('forty')");
+    cy.shouldFail("foo = 1  satisfies: spok.le(NaN)");
     cy.spok({ foo: 1 }, { foo: "spok.le('forty')" });
   });
 
@@ -276,7 +276,7 @@ describe("spok.lt()", () => {
   });
 
   it("fails when the param is not a number", () => {
-    cy.shouldFail("foo = 1  satisfies: spok.lt('forty')");
+    cy.shouldFail("foo = 1  satisfies: spok.lt(NaN)");
     cy.spok({ foo: 1 }, { foo: "spok.lt('forty')" });
   });
 

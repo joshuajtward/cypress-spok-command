@@ -1,4 +1,3 @@
-/// <reference path="./index.d.ts"/>
 import cySpok from "cy-spok";
 import { testStrictMode } from "./strictMode";
 import { matchRecursively } from "./matcher";
@@ -18,7 +17,7 @@ function spok(
     name: "spok",
     message: strictMode ? "strictMode: true" : "",
     consoleProps: () => ({
-      target: target,
+      target,
     }),
   });
 
@@ -28,6 +27,4 @@ function spok(
 }
 Cypress.Commands.add("spok", spok);
 
-module.exports = {
-  spok,
-};
+module.exports = spok;
