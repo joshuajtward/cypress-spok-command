@@ -19,6 +19,8 @@ jobs:
         run: yarn install
       - name: Check Types
         run: yarn checkTypes
+      - name: Lint
+        run: yarn lint
       - name: Verify Cypress
         run: yarn cypress verify
       - name: Run Cypress tests
