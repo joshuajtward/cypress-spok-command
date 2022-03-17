@@ -6,7 +6,7 @@ type spokOptionsType = {
   strictMode?: boolean;
 };
 
-function spok(
+export function spok(
   target: object,
   matcher: object,
   options: spokOptionsType = { strictMode: false }
@@ -25,5 +25,3 @@ function spok(
   const finalMatcher = matchRecursively(matcher);
   cy.wrap(target, { log: false }).should(cySpok(finalMatcher));
 }
-
-module.exports = spok;

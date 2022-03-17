@@ -61,5 +61,3 @@ declare namespace Cypress {
     spok(target: any, matcher: any, options?: { strictMode?: boolean }): any;
   }
 }
-
-export default Cypress;

@@ -1,3 +1,4 @@
+import { spok } from "../../src/index";
 import { errorMessageTemplate } from "./testConstants";
 
 Cypress.Commands.add("shouldFail", (errorMessage, useTemplate = true) => {
@@ -8,3 +9,6 @@ Cypress.Commands.add("shouldFail", (errorMessage, useTemplate = true) => {
     expect(e.message).to.eq(expectedErrorMessage);
   });
 });
+
+// @ts-ignore
+Cypress.Commands.add("spok", spok);

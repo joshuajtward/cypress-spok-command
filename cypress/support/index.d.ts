@@ -7,5 +7,6 @@ declare namespace Cypress {
      * @param useTemplate - whether to use Cypress' default error message in the template
      */
     shouldFail(expectedErrorMessage: string, useTemplate?: boolean): any;
+    spok(): any;
   }
 }
