@@ -25,6 +25,5 @@ function spok(
   const finalMatcher = matchRecursively(matcher);
   cy.wrap(target, { log: false }).should(cySpok(finalMatcher));
 }
-Cypress.Commands.add("spok", spok);
 
 module.exports = spok;
