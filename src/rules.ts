@@ -17,17 +17,15 @@ const {
 /* 
   Taking spok functions as strings and returning the composed spok functions
 */
-export function ruleMatcher(value) {
+export function ruleMatcher(value: any) {
   switch (value) {
     case "spok.array":
       value = cySpok.array;
       break;
     // spok.arrayElements
     case value.match(spokArrayElementsRegex)?.input:
-      console.log(value.match(spokArrayElementsRegex));
-      console.log(value.match(spokArrayElementsRegex)[1]);
       value = cySpok.arrayElements(
-        parseInt(value.match(spokArrayElementsRegex)[1])
+        Number(value.match(spokArrayElementsRegex)[1])
       );
       break;
     case "spok.boolean":
@@ -50,35 +48,35 @@ export function ruleMatcher(value) {
       break;
     // spok.ge
     case value.match(spokGeRegex)?.input:
-      value = cySpok.ge(value.match(spokGeRegex)[1]);
+      value = cySpok.ge(Number(value.match(spokGeRegex)[1]));
       break;
     case "spok.gez":
       value = cySpok.gez;
       break;
     // spok.gt
     case value.match(spokGtRegex)?.input:
-      value = cySpok.gt(value.match(spokGtRegex)[1]);
+      value = cySpok.gt(Number(value.match(spokGtRegex)[1]));
       break;
     case "spok.gtz":
       value = cySpok.gtz;
       break;
     // spok.le
     case value.match(spokLeRegex)?.input:
-      value = cySpok.le(value.match(spokLeRegex)[1]);
+      value = cySpok.le(Number(value.match(spokLeRegex)[1]));
       break;
     case "spok.lez":
       value = cySpok.lez;
       break;
     // spok.lt
     case value.match(spokLtRegex)?.input:
-      value = cySpok.lt(value.match(spokLtRegex)[1]);
+      value = cySpok.lt(Number(value.match(spokLtRegex)[1]));
       break;
     case "spok.ltz":
       value = cySpok.ltz;
       break;
     // spok.ne
     case value.match(spokNeRegex)?.input:
-      value = cySpok.ne(value.match(spokNeRegex)[1]);
+      value = cySpok.ne(Number(value.match(spokNeRegex)[1]));
       break;
     case "spok.nonEmptyArray":
       value = cySpok.arrayElementsRange(1, 999999999);
@@ -95,8 +93,8 @@ export function ruleMatcher(value) {
     // spok.range
     case value.match(spokRangeRegex)?.input:
       value = cySpok.range(
-        value.match(spokRangeRegex)[1],
-        value.match(spokRangeRegex)[2]
+        Number(value.match(spokRangeRegex)[1]),
+        Number(value.match(spokRangeRegex)[2])
       );
       break;
     // spok.stringLength

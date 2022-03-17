@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 declare namespace Cypress {
-  interface Chainable {
+  interface Chainable<Subject = any> {
     /**
      * @param target - the object to be asserted upon
      * @param matcher - the object pattern we are expecting
@@ -58,6 +58,10 @@ declare namespace Cypress {
      *   { strictMode: true }
      * )
      */
-    spok(target: any, matcher: any, options?: { strictMode?: boolean }): void;
+    spok(
+      target: any,
+      matcher: any,
+      options?: { strictMode?: boolean }
+    ): Chainable<null>;
   }
 }
