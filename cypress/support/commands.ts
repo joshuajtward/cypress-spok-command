@@ -1,6 +1,4 @@
-import { spok } from "../../src/index";
 import { errorMessageTemplate } from "./testConstants";
-import type { SpokOptionsType } from "../../src";
 
 declare global {
   namespace Cypress {
@@ -12,7 +10,6 @@ declare global {
        * @param useTemplate - whether to use Cypress' default error message in the template
        */
       shouldFail(expectedErrorMessage: string, useTemplate?: boolean): any;
-      spok(target: object, matcher: object, options?: SpokOptionsType): void;
     }
   }
 }
@@ -24,5 +21,3 @@ Cypress.Commands.add("shouldFail", (errorMessage, useTemplate = true) =>
     )
   )
 );
-
-Cypress.Commands.add("spok", spok);
