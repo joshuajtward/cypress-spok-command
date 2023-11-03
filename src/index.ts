@@ -2,10 +2,6 @@ import cySpok from "cy-spok";
 import { testStrictMode } from "./strictMode";
 import { matchRecursively } from "./matcher";
 
-export type SpokOptionsType = {
-  strictMode?: boolean;
-};
-
 declare global {
   namespace Cypress {
     interface Chainable {
@@ -72,11 +68,7 @@ declare global {
 
 Cypress.Commands.add(
   "spok",
-  (
-    target: object,
-    matcher: object,
-    options: SpokOptionsType = { strictMode: false }
-  ) => {
+  (target, matcher, options = { strictMode: false }) => {
     const { strictMode } = options;
 
     Cypress.log({
