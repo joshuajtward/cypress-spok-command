@@ -18,8 +18,7 @@ jobs:
         id: cache
         with:
           path: |
-            ~/cache
-            !~/cache/exclude
+            ~/node_modules
           key: ${{ runner.os }}-${{ hashFiles('yarn.lock') }}
       - name: Install deps
         if: steps.cache.outputs.cache-hit != 'true'
