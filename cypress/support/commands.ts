@@ -17,13 +17,12 @@ declare global {
   }
 }
 
-Cypress.Commands.add("shouldFail", (errorMessage, useTemplate = true) => {
-  cy.on("fail", (e) => {
-    const expectedErrorMessage = useTemplate
-      ? `${errorMessageTemplate} ${errorMessage}`
-      : errorMessage;
-    expect(e.message).to.eq(expectedErrorMessage);
-  });
-});
+Cypress.Commands.add("shouldFail", (errorMessage, useTemplate = true) =>
+  cy.on("fail", (e) =>
+    expect(e.message).to.eq(
+      useTemplate ? `${errorMessageTemplate} ${errorMessage}` : errorMessage
+    )
+  )
+);
 
 Cypress.Commands.add("spok", spok);
