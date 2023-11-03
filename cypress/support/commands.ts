@@ -12,7 +12,7 @@ declare global {
        * @param useTemplate - whether to use Cypress' default error message in the template
        */
       shouldFail(expectedErrorMessage: string, useTemplate?: boolean): any;
-      spok(target: object, matcher: object, options: SpokOptionsType): void;
+      spok(target: object, matcher: object, options?: SpokOptionsType): void;
     }
   }
 }
