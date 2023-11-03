@@ -22,7 +22,7 @@ jobs:
             !~/cache/exclude
           key: ${{ runner.os }}-${{ hashFiles('yarn.lock') }}
       - name: Install deps
-        if: !steps.cache.outputs.cache-hit
+        if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install
       - name: Check Types
         run: yarn checkTypes
