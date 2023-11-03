@@ -6,6 +6,14 @@ export type SpokOptionsType = {
   strictMode?: boolean;
 };
 
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      spok(target: any, matcher: any, options?: { strictMode?: boolean }): any;
+    }
+  }
+}
+
 /**
  * @param target - the object to be asserted upon
  * @param matcher - the object pattern we are expecting
@@ -81,3 +89,5 @@ export function spok(
   const finalMatcher = matchRecursively(matcher);
   cy.wrap(target, { log: false }).should(cySpok(finalMatcher));
 }
+
+Cypress.Commands.add("spok", spok);
