@@ -10,5 +10,4 @@ export function testStrictMode(target: object, matcher: object) {
     message: `target and matcher have same keys: ${result}`,
   });
   if (!result) throw new Error(strictModeErrorMessage);
-
 }
