@@ -2,20 +2,27 @@ name: CI workflow
 
 on:
   push:
-    branches: [ main ]
+    branches: main
   pull_request:
-    branches: [ main ]
+    branches: main
 
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js 15.x
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 15.x
+          node-version: 20
+      - uses: actions/cache@v3
+        id: cache
+        with:
+          path: |
+            node_modules
+            /home/runner/.cache/Cypress
+          key: ${{ runner.os }}-${{ hashFiles('yarn.lock') }}
       - name: Install deps
+        if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install
       - name: Check Types
         run: yarn checkTypes

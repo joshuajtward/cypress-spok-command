@@ -1,13 +1,6 @@
-function sameKeys(target: object, matcher: object) {
-  const hasSameKeyCount =
-    Object.keys(matcher).length === Object.keys(target).length;
-  if (!hasSameKeyCount) {
-    return false;
-  }
-  const targetKeys = Object.keys(target).sort();
-  const matcherKeys = Object.keys(matcher).sort();
-  return JSON.stringify(targetKeys) === JSON.stringify(matcherKeys);
-}
+const stringifySortKeys = (object: object) => JSON.stringify(Object.keys(object).sort());
+const sameKeys = (target: object, matcher: object) => stringifySortKeys(target) === stringifySortKeys(matcher);
+
 export const strictModeErrorMessage =
   "cy.spok() strictMode error: object keys were not an exact match";
 export function testStrictMode(target: object, matcher: object) {
@@ -16,7 +9,6 @@ export function testStrictMode(target: object, matcher: object) {
     name: "strictMode",
     message: `target and matcher have same keys: ${result}`,
   });
-  if (!result) {
-    throw new Error(strictModeErrorMessage);
-  }
+  if (!result) throw new Error(strictModeErrorMessage);
+
 }

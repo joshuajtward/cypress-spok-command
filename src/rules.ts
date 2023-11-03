@@ -17,7 +17,7 @@ const {
 /* 
   Taking spok functions as strings and returning the composed spok functions
 */
-export function ruleMatcher(value: any) {
+export const ruleMatcher = (value: any) => {
   switch (value) {
     case "spok.array":
       value = cySpok.array;
