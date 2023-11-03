@@ -37,4 +37,7 @@ jobs:
     needs: build_and_test
     if: github.ref_name == 'main'
     steps:
+      - uses: actions/checkout@v4
       - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
