@@ -8,7 +8,6 @@
     "lib/**/*"
   ],
   "scripts": {
-    "prepare": "yarn build",
     "build": "tsc",
     "checkTypes": "tsc --noEmit && cd cypress && tsc",
     "open": "cypress open",

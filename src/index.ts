@@ -2,7 +2,7 @@ import cySpok from "cy-spok";
 import { testStrictMode } from "./strictMode";
 import { matchRecursively } from "./matcher";
 
-type spokOptionsType = {
+type SpokOptionsType = {
   strictMode?: boolean;
 };
 
@@ -65,7 +65,7 @@ type spokOptionsType = {
 export function spok(
   target: object,
   matcher: object,
-  options: spokOptionsType = { strictMode: false }
+  options: SpokOptionsType = { strictMode: false }
 ) {
   const { strictMode } = options;
 
