@@ -1,6 +1,0 @@
-{
-    "defaultCommandTimeout": 200,
-    "screenshotOnRunFailure": false,
-    "testFiles": "**/*.spec.ts",
-    "video": false
-}

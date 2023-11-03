@@ -10,12 +10,13 @@
   "scripts": {
     "build": "tsc",
     "checkTypes": "tsc --noEmit && cd cypress && tsc",
-    "open": "cypress open",
+    "debug": "cypress open",
     "test": "cypress run",
     "lint": "eslint"
   },
   "dependencies": {
-    "cy-spok": "^1.6.2"
+    "cy-spok": "^1.6.2",
+    "spok": "^1.5.5"
   },
   "devDependencies": {
     "cypress": "13.4.0 ",

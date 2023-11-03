@@ -2,12 +2,21 @@
   "compilerOptions": {
     "declaration": true,
     "esModuleInterop": true,
-    "lib": ["es5", "dom", "ES2017.Object"],
+    "lib": [
+      "ES6",
+      "dom",
+    ],
     "module": "commonjs",
     "outDir": "./lib",
     "strict": true,
-    "target": "es5",
-    "types": ["cypress", "cy-spok", "node"]
+    "target": "ES6",
+    "types": [
+      "cypress",
+      "cy-spok",
+      "node"
+    ]
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }
