@@ -2,7 +2,7 @@ import cySpok from "cy-spok";
 import { testStrictMode } from "./strictMode";
 import { matchRecursively } from "./matcher";
 
-type SpokOptionsType = {
+export type SpokOptionsType = {
   strictMode?: boolean;
 };
 

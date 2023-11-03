@@ -1,4 +1,3 @@
-/// <reference path="../support/index.d.ts" />
 import { errorMessageTemplate } from "../support/testConstants";
 
 const mixedArray = ["a", "b", 1, "string"];

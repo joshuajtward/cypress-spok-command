@@ -1,4 +1,3 @@
-/// <reference path="../../src/index.d.ts" />
 import {
   errorMessageTemplate,
   strictModeErrorMessage,
