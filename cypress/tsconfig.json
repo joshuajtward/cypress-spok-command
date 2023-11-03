@@ -3,5 +3,7 @@
     "noEmit": true
   },
   "extends": "../tsconfig.json",
-  "include": ["."]
+  "include": [
+    "."
+  ]
 }
