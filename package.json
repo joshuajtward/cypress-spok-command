@@ -1,7 +1,7 @@
 {
   "name": "cypress-spok-command",
   "description": "A wrapper around cy-spok",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "source": "src/index.ts",
   "main": "./dist/index.js",
