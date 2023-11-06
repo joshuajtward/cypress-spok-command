@@ -6,12 +6,12 @@
   "source": "src/index.ts",
   "main": "./dist/index.js",
   "module": "dist/module.js",
-  "types": "./dist/types.d.ts",
+  "types": "./dist/index.d.ts",
   "files": [
     "./dist"
   ],
   "scripts": {
-    "build": "parcel build",
+    "build": "parcel build && cp src/index.d.ts dist",
     "checkTypes": "tsc --noEmit && cd cypress && tsc",
     "debug": "cypress open",
     "test": "cypress run",
